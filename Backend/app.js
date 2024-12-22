@@ -17,6 +17,9 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 
+const captainRoutes = require('./routes/captain.routes')
+app.use('/captains', captainRoutes)
+
 
 app.get('/', (req, res) => {
     res.send('hello world it is uber clone  ')
